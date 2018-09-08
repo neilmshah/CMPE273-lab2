@@ -1,0 +1,24 @@
+// Title: CMPE273-lab2
+// Description: A simple calculator with add(x, y) function as a gRPC server
+// By: Neil Shah
+
+syntax = "proto3";
+
+package calculator;
+
+// The calculate service definition.
+service Calculate {
+  //add two integers
+  rpc Add(AddRequest) returns (AddReply) {}
+}
+
+//Add Request
+message AddRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+//Add Response
+message AddReply {
+  string message = 1;
+}
